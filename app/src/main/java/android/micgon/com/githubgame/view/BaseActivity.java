@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 abstract public class BaseActivity extends AppCompatActivity {
+    private static final String UID_KEY = "uid";
+
     abstract Fragment createFragment();
 
     @Override
@@ -19,6 +21,8 @@ abstract public class BaseActivity extends AppCompatActivity {
 
         if(f == null) {
             f = createFragment();
+            Bundle args = new Bundle();
+            f.setArguments(args);
             fm.beginTransaction().add(R.id.fragment_container, f).commit();
         }
     }
