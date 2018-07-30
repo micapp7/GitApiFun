@@ -23,6 +23,8 @@ public class GameAdapter extends RecyclerView.Adapter<GameViewHolder> {
     public GameAdapter(Context context, List<User> userList) {
         this.context = context;
         this.userList = userList;
+
+
     }
 
     @NonNull

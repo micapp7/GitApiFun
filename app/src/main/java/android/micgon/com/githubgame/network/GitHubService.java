@@ -10,11 +10,12 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface GitHubService {
+    //Base URL = https://api.github.com";
 
     @GET("/users/{user}")
     Call<User> getSingleUser(@Path("user") String userId);
 
-    // TODO there's a limit on Github api call with no auth.
+    // There's a limit on Github api call with no auth.
     @GET("/users")
     Call<List<User>> getUsers();
 
